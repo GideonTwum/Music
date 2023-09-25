@@ -56,24 +56,24 @@ const Firstpage = () => {
 
             
             <div className='flex gap-7 m-auto '>
-                    <div className='ring-1 ring-[#ccc] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('trending')}>
-                        <p className='text-sm text-[#ccc]'>Trending</p>
+                    <div className='ring-1 ring-[#e1b6f0] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('trending')}>
+                        <p className='text-[12px] text-[#ccc]'>Trending</p>
                     </div>
-                    <div className='ring-1 ring-[#ccc] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('newest')}>
-                        <p className='text-sm text-[#ccc]'>Newest</p>
+                    <div className='ring-1 ring-[#e1b6f0] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('newest')}>
+                        <p className='text-[12px] text-[#ccc]'>Newest</p>
                     </div>
-                    <div className='ring-1 ring-[#ccc] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('top chart')}>
-                        <p className='text-sm text-[#ccc]'>Top chart</p>
+                    <div className='ring-1 ring-[#e1b6f0] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('top chart')}>
+                        <p className='text-[12px] text-[#ccc]'>Top chart</p>
                     </div>
-                    <div className='ring-1 ring-[#ccc] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('older')}>
-                        <p className='text-sm text-[#ccc]'>Older</p>
+                    <div className='ring-1 ring-[#e1b6f0] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('older')}>
+                        <p className='text-[12px] text-[#ccc]'>Older</p>
                     </div>
 
             </div>
 
             <br />
                     <div className='flex bg-white m-auto justify-between gap-24 items-center rounded '>
-                        <input placeholder='Search' className='border-none outline-none p-1 rounded text-sm px-2' type="text" />
+                        <input placeholder='Search' className='border-none outline-none p-1 rounded text-sm px-2  ' type="text" />
                         <SearchIcon />
                     </div>
 
