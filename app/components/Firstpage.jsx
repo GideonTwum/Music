@@ -76,31 +76,82 @@ const Firstpage = () => {
                         <input placeholder='Search' className='border-none outline-none p-1 rounded text-sm px-2  ' type="text" />
                         <SearchIcon />
                     </div>
-
-    {
+    <div className='flex items-center gap-10 justify-around'>
+        <div>
+        {
         music.map((song)=> (
-            
-
-            <div className='flex flex-col m-auto bg-[#e1b6f0] hover:shadow-xl p-4 rounded-lg w-[50%] mt-6 '>
-            <p className='font-semibold text-white'>#1</p>
-                <div className='flex items-center justify-between gap-36'>
-                    <div className='flex gap-2 items-center'>
-                     <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[#bb03fc]'>
-                        <HeadphonesIcon />
-                     </div>
-                        <div className='flex flex-col '>
-                           <p className='font-semibold flex'>  {song.name}</p> 
-                           <p className='text-sm flex'>  {song.artist}</p> 
-                           <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
+            <div className='flex flex-col m-auto bg-white hover:shadow-xl p-4 w-full rounded-lg w-[50%] mt-6'>
+                    <p className='font-semibold text-black'>#1</p>
+                        <div className='flex items-center justify-between gap-36'>
+                            <div className='flex gap-2 items-center'>
+                                    <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
+                                        <HeadphonesIcon className='text-white' />
+                                    </div>
+                                        <div className='flex flex-col '>
+                                                <p className='font-semibold flex'>  {song.name}</p> 
+                                                <p className='text-sm flex'>  {song.artist}</p> 
+                                                <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
+                                        </div>
+                            </div>
+                                        <div>
+                                        <PlayArrowIcon /> 
+                                        </div>
                         </div>
-                    </div>
-                        <div>
-                        <PlayArrowIcon /> 
-                        </div>
-                    </div>
             </div>
         ))
     }
+        </div>
+    <div>
+    {
+        music.map((song)=> (
+            <div className='flex flex-col m-auto bg-white hover:shadow-xl w-full  p-4 rounded-lg w-[50%] mt-6'>
+                    <p className='font-semibold text-black'>#1</p>
+                        <div className='flex items-center justify-between gap-36'>
+                            <div className='flex gap-2 items-center'>
+                                    <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
+                                        <HeadphonesIcon className='text-white' />
+                                    </div>
+                                        <div className='flex flex-col '>
+                                                <p className='font-semibold flex'>  {song.name}</p> 
+                                                <p className='text-sm flex'>  {song.artist}</p> 
+                                                <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
+                                        </div>
+                            </div>
+                                        <div>
+                                        <PlayArrowIcon /> 
+                                        </div>
+                        </div>
+            </div>
+        ))
+    }
+    </div>
+    <div>
+    {
+        music.map((song)=> (
+            <div className='flex flex-col m-auto bg-white hover:shadow-xl w-full p-4 rounded-lg w-[50%] mt-6'>
+                    <p className='font-semibold text-black'>#1</p>
+                        <div className='flex items-center justify-between gap-36'>
+                            <div className='flex gap-2 items-center'>
+                                    <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
+                                        <HeadphonesIcon className='text-white' />
+                                    </div>
+                                        <div className='flex flex-col '>
+                                                <p className='font-semibold flex'>  {song.name}</p> 
+                                                <p className='text-sm flex'>  {song.artist}</p> 
+                                                <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
+                                        </div>
+                            </div>
+                                        <div>
+                                        <PlayArrowIcon /> 
+                                        </div>
+                        </div>
+            </div>
+        ))
+    }
+    </div>
+    
+    </div>
+   
         </div>
     </div>
   )
