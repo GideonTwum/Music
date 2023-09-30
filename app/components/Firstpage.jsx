@@ -56,17 +56,17 @@ const Firstpage = () => {
 
             
             <div className='flex gap-7 m-auto '>
-                    <div className='ring-1 ring-[#e1b6f0] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('trending')}>
-                        <p className='text-[12px] text-[#ccc]'>Trending</p>
+                    <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('trending')}>
+                        <p className='text-[13px] text-[#ccc] hover:text-[mediumseagreen]'> Trending </p>
                     </div>
-                    <div className='ring-1 ring-[#e1b6f0] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('newest')}>
-                        <p className='text-[12px] text-[#ccc]'>Newest</p>
+                    <div className=' px-2 cursor-pointer rounded-xl' onClick={()=> setTab('newest')}>
+                        <p className='text-[13px] text-[#ccc] hover:text-[mediumseagreen]'>Newest</p>
                     </div>
-                    <div className='ring-1 ring-[#e1b6f0] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('top chart')}>
-                        <p className='text-[12px] text-[#ccc]'>Top chart</p>
+                    <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('top chart')}>
+                        <p className='text-[13px] text-[#ccc] hover:text-[mediumseagreen]'>Top chart</p>
                     </div>
-                    <div className='ring-1 ring-[#e1b6f0] hover:bg-[#795185] px-2 cursor-pointer rounded-xl' onClick={()=> setTab('older')}>
-                        <p className='text-[12px] text-[#ccc]'>Older</p>
+                    <div className=' px-2 cursor-pointer rounded-xl' onClick={()=> setTab('older')}>
+                        <p className='text-[13px] text-[#ccc] hover:text-[mediumseagreen]'>Older</p>
                     </div>
 
             </div>
