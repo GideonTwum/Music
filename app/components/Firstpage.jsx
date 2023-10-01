@@ -4,6 +4,7 @@ import HeadphonesIcon from '@mui/icons-material/Headphones';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SearchIcon from '@mui/icons-material/Search';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
+import FilterNoneOutlinedIcon from '@mui/icons-material/FilterNoneOutlined';
 
 
 const Firstpage = () => {
@@ -50,38 +51,39 @@ const Firstpage = () => {
   return (
     <div>
         <div className='flex flex-col w-full p-10 '>
-            <div>
-                <p className='text-sm font-semibold text-[#ccc] '>Filter by:</p>
+            <div className='flex items-center gap-1 m-auto ml-96 m-2 filter'>
+                <FilterNoneOutlinedIcon className='text-[#ccc] text-[12px] filtericon' />
+                <p className='text-[12px] font-semibold text-[#ccc] '>Filter by:</p>
             </div>
 
             
             <div className='flex gap-7 m-auto '>
                     <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('trending')}>
-                        <p className='text-[13px] text-[#ccc] hover:text-[mediumseagreen]'> Trending </p>
+                        <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'> Trending </p>
                     </div>
                     <div className=' px-2 cursor-pointer rounded-xl' onClick={()=> setTab('newest')}>
-                        <p className='text-[13px] text-[#ccc] hover:text-[mediumseagreen]'>Newest</p>
+                        <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'>Newest</p>
                     </div>
                     <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('top chart')}>
-                        <p className='text-[13px] text-[#ccc] hover:text-[mediumseagreen]'>Top chart</p>
+                        <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'>Top chart</p>
                     </div>
                     <div className=' px-2 cursor-pointer rounded-xl' onClick={()=> setTab('older')}>
-                        <p className='text-[13px] text-[#ccc] hover:text-[mediumseagreen]'>Older</p>
+                        <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'>Older</p>
                     </div>
 
             </div>
 
             <br />
-                    <div className='flex bg-white m-auto justify-between gap-24 items-center rounded '>
+                    <div className='flex bg-white m-auto justify-between gap-24 items-center rounded p-2 '>
                         <input placeholder='Search' className='border-none outline-none p-1 rounded text-sm px-2  ' type="text" />
-                        <SearchIcon />
+                        <SearchIcon className='text-sm text-[#ccc]' />
                     </div>
     <div className='flex items-center gap-10 justify-around'>
         <div>
         {
         music.map((song)=> (
-            <div className='flex flex-col m-auto bg-white hover:shadow-xl p-4 w-full rounded-lg w-[50%] mt-6'>
-                    <p className='font-semibold text-black'>#1</p>
+            <div className='flex flex-col m-auto bg-white hover:shadow-xl p-4 hover:cursor-pointer w-full rounded-lg w-[50%] mt-6'>
+                    <p className='font-semibold text-black'>#{song.id}</p>
                         <div className='flex items-center justify-between gap-36'>
                             <div className='flex gap-2 items-center'>
                                     <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
@@ -104,8 +106,8 @@ const Firstpage = () => {
     <div>
     {
         music.map((song)=> (
-            <div className='flex flex-col m-auto bg-white hover:shadow-xl w-full  p-4 rounded-lg w-[50%] mt-6'>
-                    <p className='font-semibold text-black'>#1</p>
+            <div className='flex flex-col m-auto bg-white hover:shadow-xl w-full hover:cursor-pointer p-4 rounded-lg w-[50%] mt-6'>
+                    <p className='font-semibold text-black'>#{song.id}</p>
                         <div className='flex items-center justify-between gap-36'>
                             <div className='flex gap-2 items-center'>
                                     <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
@@ -128,8 +130,8 @@ const Firstpage = () => {
     <div>
     {
         music.map((song)=> (
-            <div className='flex flex-col m-auto bg-white hover:shadow-xl w-full p-4 rounded-lg w-[50%] mt-6'>
-                    <p className='font-semibold text-black'>#1</p>
+            <div className='flex flex-col m-auto bg-white hover:shadow-xl w-full hover:cursor-pointer p-4 rounded-lg w-[50%] mt-6'>
+                    <p className='font-semibold text-black'>#{song.id}</p>
                         <div className='flex items-center justify-between gap-36'>
                             <div className='flex gap-2 items-center'>
                                     <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
@@ -142,7 +144,7 @@ const Firstpage = () => {
                                         </div>
                             </div>
                                         <div>
-                                        <PlayArrowIcon /> 
+                                           <PlayArrowIcon /> 
                                         </div>
                         </div>
             </div>
