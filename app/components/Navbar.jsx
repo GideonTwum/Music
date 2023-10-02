@@ -9,7 +9,7 @@ import { DarkModeOutlined } from '@mui/icons-material';
 const Navbar = () => {
   const [isLightMode, setIsLightMode] = useState(true)
   
-  sessionStorage.setItem("light_theme", isLightMode)
+  // sessionStorage.setItem("light_theme", isLightMode)
   
   return (
     <div className={isLightMode ? 'bg-[#F9FAFD]' : 'bg-[#3A3A3A]'}>
