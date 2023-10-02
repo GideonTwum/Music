@@ -14,7 +14,10 @@ const Navbar = () => {
   return (
     <div className={isLightMode ? 'bg-[#F9FAFD]' : 'bg-[#3A3A3A]'}>
         <div className='flex justify-between shadow-xl bg-white p-5 w-full'> 
-            <h2 className='font-semibold text-sm text-[mediumseagreen]'>Experimento Music</h2>
+        <div className='flex items-center text-sm gap-1'>
+        <h2 className='font-semibold text-sm text-[mediumseagreen]'>Experimento</h2> <p className='font-thin '> Music</p>
+        </div>
+           
             <div className='flex items-center gap-3'>
                 <p className='text-[#636169] text-sm hover:ring-1 rounded hover:ring-[#ccc]'> Hello, Joshua</p>
                 <div className='hover:cursor-pointer'>

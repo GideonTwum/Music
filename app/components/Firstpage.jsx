@@ -5,6 +5,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SearchIcon from '@mui/icons-material/Search';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import FilterNoneOutlinedIcon from '@mui/icons-material/FilterNoneOutlined';
+import Cardmusic from './Cardmusic';
 
 
 const Firstpage = () => {
@@ -57,7 +58,7 @@ const Firstpage = () => {
             </div>
 
             
-            <div className='flex gap-7 m-auto '>
+            <div className='flex gap-7 m-auto mt-3'>
                     <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('trending')}>
                         <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'> Trending </p>
                     </div>
@@ -77,84 +78,10 @@ const Firstpage = () => {
                     <div className='flex bg-white m-auto justify-between gap-24 items-center rounded p-2 '>
                         <input placeholder='Search' className='border-none outline-none p-1 rounded text-sm px-2  ' type="text" />
                         <SearchIcon className='text-sm text-[#ccc]' />
-                    </div>
-    <div className='flex items-center gap-10 justify-around'>
-        <div>
-        {
-        music.map((song)=> (
-            <div className='flex flex-col m-auto bg-white hover:shadow-xl p-4 hover:cursor-pointer w-full rounded-lg w-[50%] mt-6'>
-                    <p className='font-semibold text-black'>#{song.id}</p>
-                        <div className='flex items-center justify-between gap-36'>
-                            <div className='flex gap-2 items-center'>
-                                    <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
-                                        <HeadphonesIcon className='text-white' />
-                                    </div>
-                                        <div className='flex flex-col '>
-                                                <p className='font-semibold flex'>  {song.name}</p> 
-                                                <p className='text-sm flex'>  {song.artist}</p> 
-                                                <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
-                                        </div>
-                            </div>
-                                        <div>
-                                        <PlayArrowIcon /> 
-                                        </div>
-                        </div>
-            </div>
-        ))
-    }
-        </div>
-    <div>
-    {
-        music.map((song)=> (
-            <div className='flex flex-col m-auto bg-white hover:shadow-xl w-full hover:cursor-pointer p-4 rounded-lg w-[50%] mt-6'>
-                    <p className='font-semibold text-black'>#{song.id}</p>
-                        <div className='flex items-center justify-between gap-36'>
-                            <div className='flex gap-2 items-center'>
-                                    <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
-                                        <HeadphonesIcon className='text-white' />
-                                    </div>
-                                        <div className='flex flex-col '>
-                                                <p className='font-semibold flex'>  {song.name}</p> 
-                                                <p className='text-sm flex'>  {song.artist}</p> 
-                                                <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
-                                        </div>
-                            </div>
-                                        <div>
-                                        <PlayArrowIcon /> 
-                                        </div>
-                        </div>
-            </div>
-        ))
-    }
+                    </div>  
     </div>
-    <div>
-    {
-        music.map((song)=> (
-            <div className='flex flex-col m-auto bg-white hover:shadow-xl w-full hover:cursor-pointer p-4 rounded-lg w-[50%] mt-6'>
-                    <p className='font-semibold text-black'>#{song.id}</p>
-                        <div className='flex items-center justify-between gap-36'>
-                            <div className='flex gap-2 items-center'>
-                                    <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
-                                        <HeadphonesIcon className='text-white' />
-                                    </div>
-                                        <div className='flex flex-col '>
-                                                <p className='font-semibold flex'>  {song.name}</p> 
-                                                <p className='text-sm flex'>  {song.artist}</p> 
-                                                <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
-                                        </div>
-                            </div>
-                                        <div>
-                                           <PlayArrowIcon /> 
-                                        </div>
-                        </div>
-            </div>
-        ))
-    }
-    </div>
+            <Cardmusic />
     
-    </div>
-   
-        </div>
     </div>
   )
 }
