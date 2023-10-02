@@ -36,7 +36,7 @@ const Firstpage = () => {
             streams : 400 , 
         } ,
         {
-            id : 5,
+            id : 5 ,
             name : 'You dey feel the vibe',
             artist : 'Ak and Eunice',
             streams : 500 , 
@@ -86,4 +86,4 @@ const Firstpage = () => {
   )
 }
 
-export default Firstpage
+export default Firstpage 

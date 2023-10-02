@@ -1,10 +1,36 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { HeadphonesOutlined } from '@mui/icons-material';
+import Image from 'next/image';
 
 const Cardmusic = () => {
+    const [songs, setSongs] = useState([])
+
+    const getSongs = async() => {
+        try{
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+              };
+              
+              fetch("https://music-api-qkmn.onrender.com/api/v1/music/all", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    setSongs(result.songs)
+                    console.log(result.songs)
+                })
+                .catch(error => console.log('error', error));
+        }catch(err){
+          console.log(err)  
+        }
+    }
+
+    useEffect(() => {
+        getSongs()
+    } , [])
+
     const music = [ 
         {
             id : 1,
@@ -48,19 +74,30 @@ const Cardmusic = () => {
         <div>
         <div className='flex gap-7 items-center flex-wrap justify-center'>
         {
-        music.map((song)=> (
+        songs.map((song)=> (
             <div>        
                         <div className='flex flex-col m-auto bg-white hover:shadow-xl p-4 hover:cursor-pointer w-[100%] rounded-lg  mt-6'>
-                                <p className='font-semibold text-black'>#{song.id}</p>
+                                {/* <p className='font-semibold text-black'>#{song.id}</p> */}
                                     <div className='flex items-center justify-between gap-36'>
                                         <div className='flex gap-2 items-center'>
-                                                <div className='ring-1 ring-[#ccc] p-2 rounded-full bg-[mediumseagreen]'>
-                                                    <HeadphonesOutlined className='text-white' />
+                                                <div className='ring-1 ring-[#ccc]  rounded-full'>
+                                                    <Image className='rounded-full'
+                                                    width={200}
+                                                    height={200}
+                                                    src={`https://music-api-qkmn.onrender.com/uploads/${song.photo}`}
+                                                    alt='Image of alicia keys'
+
+                                                    />
                                                 </div>
                                                     <div className='flex flex-col '>
-                                                            <p className='font-semibold flex'>  {song.name}</p> 
-                                                            <p className='text-sm flex'>  {song.artist}</p> 
+                                                            <p className='font-semibold flex'>  {song.song_name}</p> 
+                                                            <p className='text-sm flex'>  {song.artiste_name}</p>
+                                                            <audio controls>
+                                                            <source src={`https://music-api-qkmn.onrender.com/uploads/${song.song}`} type="audio/mpeg" />
+                                                            Your browser does not support the audio element.
+                                                            </audio> 
                                                             <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
+                                                            <p className='text-[12px] flex items-center gap-1'>{song.likes} likes</p>
                                                     </div>
                                         </div>
                                                     <div>
