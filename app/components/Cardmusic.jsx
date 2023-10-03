@@ -4,12 +4,13 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { HeadphonesOutlined } from '@mui/icons-material';
 import Image from 'next/image';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 const Cardmusic = () => {
     const [songs, setSongs] = useState([])
     const [likes, setLikes] = useState(false)
-    const [click, setClick] = useState(false)
+    const [click, setClick] = useState(true)
 
     const getSongs = async() => {
         try{
@@ -100,7 +101,23 @@ const Cardmusic = () => {
                                                             Your browser does not support the audio element.
                                                             </audio> 
                                                             <p className='text-[10px] flex items-center gap-1'>{song.streams} streams</p> 
-                                                            <p className='text-[10px] flex items-center gap-1'> {likes} likes   <FavoriteBorderIcon className='text-red-400' onClick={() => setLikes(likes + 1)} /> </p>
+                                                            <div className='flex'>
+                                                            <p className='text-[10px] flex items-center gap-1'> {likes} likes </p>
+                                                            <div> 
+                                                                {
+                                                                    click ?   <div onClick={() => setClick(false)}>
+                                                                    <FavoriteBorderIcon className='text-red-400' onClick={() => setLikes(likes + 1)} /> 
+                                                                              </div> 
+                                                                               : 
+                                                                        <div onClick={() => (true)}> 
+                                                                            <FavoriteIcon className='text-red-400' />
+                                                                        </div>
+                                                                }
+                                                                    
+                                                            </div>
+                                                            </div>
+                                                            
+                                                            
                                                     </div>
                                         </div>
                                     </div>
