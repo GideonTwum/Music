@@ -39,20 +39,24 @@ const Cardmusic = () => {
 
     const delMusic = (musicId) => {
         try{
-            var requestOptions = {
-                method: 'DELETE',
-                redirect: 'follow'
-              };
-              
-              fetch(`https://music-api-qkmn.onrender.com:/api/v1/music/delete/${musicId}`, requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    toast.success(result.msg)
-                    getSongs()
-                    console.log(result)
-                })
-                .catch(error => console.log('error', error));
-        }
+            const res = confirm(`Are you sure you want to delete this song?`);
+            if (res) {
+                var requestOptions = {
+                    method: 'DELETE',
+                    redirect: 'follow'
+                  };
+                  
+                  fetch(`https://music-api-qkmn.onrender.com:/api/v1/music/delete/${musicId}`, requestOptions)
+                    .then(response => response.json())
+                    .then(result => {
+                        toast.success(result.msg)
+                        getSongs()
+                        console.log(result)
+                    })
+                    .catch(error => console.log('error', error));
+    
+            }
+                  }
         catch(error){
             console.log(error)
         }
@@ -98,7 +102,7 @@ const Cardmusic = () => {
         }
     ]
   return (
-    <div className='flex m-auto'>
+    <div className='flex m-auto justify-center'>
         <div>
         <div className='flex gap-7 items-center flex-wrap justify-center'>
         {
