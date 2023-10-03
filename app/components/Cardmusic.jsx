@@ -79,7 +79,7 @@ const Cardmusic = () => {
         {
         songs.map((song)=> (
             <div>        
-                        <div className='flex flex-col m-auto bg-white hover:shadow-xl p-3  hover:cursor-pointer w-[100%] rounded-xl  mt-6'>
+                        <div className='flex flex-col m-auto bg-white hover:shadow-xl p-3 justify-center hover:cursor-pointer w-[100%] rounded-xl  mt-6'>
                                 {/* <p className='font-semibold text-black'>#{song.id}</p> */}
                                     <div className='flex items-center justify-between gap-36'>
                                         <div className='flex gap-2 items-center'>
