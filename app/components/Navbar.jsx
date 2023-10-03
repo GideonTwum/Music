@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
            
             <div className='flex items-center gap-3'>
-                <p className='text-[#636169] text-sm hover:ring-1 rounded hover:ring-[#ccc]'> Hello, Joshua</p>
+                <p className='text-[#636169] text-sm hover:ring-1 rounded hover:ring-[#ccc]'> Hello, there</p>
                 <div className='hover:cursor-pointer'>
                   {
                     isLightMode ? <div onClick={() => setIsLightMode(false)}><LightModeOutlinedIcon /></div> : <div onClick={() => setIsLightMode(true)}><DarkModeOutlined /></div>

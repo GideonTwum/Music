@@ -1,12 +1,15 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { HeadphonesOutlined } from '@mui/icons-material';
 import Image from 'next/image';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 const Cardmusic = () => {
     const [songs, setSongs] = useState([])
+    const [likes, setLikes] = useState(false)
+    const [click, setClick] = useState(false)
 
     const getSongs = async() => {
         try{
@@ -85,7 +88,7 @@ const Cardmusic = () => {
                                                     width={200}
                                                     height={200}
                                                     src={`https://music-api-qkmn.onrender.com/uploads/${song.photo}`}
-                                                    alt='Image of alicia keys'
+                                                    alt=''
 
                                                     />
                                                 </div>
@@ -97,7 +100,7 @@ const Cardmusic = () => {
                                                             Your browser does not support the audio element.
                                                             </audio> 
                                                             <p className='text-[12px] flex items-center gap-1'>{song.streams} streams</p> 
-                                                            <p className='text-[12px] flex items-center gap-1'>{song.likes} likes</p>
+                                                            <p className='text-[12px] flex items-center gap-1'> {likes} likes   <FavoriteBorderIcon className='text-red-400' onClick={() => setLikes(likes + 1)} /> </p>
                                                     </div>
                                         </div>
                                                     <div>
