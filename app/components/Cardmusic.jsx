@@ -5,6 +5,8 @@ import { HeadphonesOutlined } from '@mui/icons-material';
 import Image from 'next/image';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import {toast, Toaster} from 'react-hot-toast';
 
 
 const Cardmusic = () => {
@@ -34,6 +36,28 @@ const Cardmusic = () => {
     useEffect(() => {
         getSongs()
     } , [])
+
+    const delMusic = (musicId) => {
+        try{
+            var requestOptions = {
+                method: 'DELETE',
+                redirect: 'follow'
+              };
+              
+              fetch(`https://music-api-qkmn.onrender.com:/api/v1/music/delete/${musicId}`, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    toast.success(result.msg)
+                    getSongs()
+                    console.log(result)
+                })
+                .catch(error => console.log('error', error));
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+
 
     const music = [ 
         {
@@ -103,17 +127,19 @@ const Cardmusic = () => {
                                                             <p className='text-[10px] flex items-center gap-1'>{song.streams} streams</p> 
                                                             <div className='flex'>
                                                             <p className='text-[10px] flex items-center gap-1'> {likes} likes </p>
-                                                            <div> 
+                                                            <div className='flex gap-56'>
                                                                 {
                                                                     click ?   <div onClick={() => setClick(false)}>
                                                                     <FavoriteBorderIcon className='text-red-400' onClick={() => setLikes(likes + 1)} /> 
                                                                               </div> 
                                                                                : 
-                                                                        <div onClick={() => (true)}> 
-                                                                            <FavoriteIcon className='text-red-400' />
+                                                                        <div onClick={() => setClick(true)}> 
+                                                                            <FavoriteIcon className='text-red-400 favoriteicon' />
                                                                         </div>
                                                                 }
-                                                                    
+                                                                    <div onClick={() => delMusic(song._id)}>
+                                                                            <DeleteOutlineOutlinedIcon className='text-[20px]' />
+                                                                    </div>
                                                             </div>
                                                             </div>
                                                             
@@ -128,6 +154,7 @@ const Cardmusic = () => {
     }
         </div> 
         </div>
+        <Toaster />
     </div>
     
   )

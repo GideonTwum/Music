@@ -8,5 +8,18 @@
 
 
 .filter{
-  margin-left: 26.5rem;
+  margin-left: 26.5rem !important;
+}
+
+.favoriteicon{
+  animation: fade 2s alternate forwards ;
+}
+
+@keyframes fade {
+  0%{
+      transform: opacity(0);
+  }
+  100%{
+      transform: opacity(1);
+  }
 }
