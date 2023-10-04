@@ -3,19 +3,20 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Cardmusic from '../components/Cardmusic'
 
-const Trending = () => {
+const Latest = () => {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col '>
         <Navbar />
-        <div className='flex flex-col flex-wrap items-center justify-center mt-20'>
+            <div className='flex items-center flex-col justify-center mt-20'>
                 <div>
-                    <h1 className='font-semibold hover:text-[mediumseagreen] cursor-pointer'>Trending Songs</h1>
+                   <h1 className='font-semibold hover:text-[mediumseagreen] cursor-pointer'>Latest Songs</h1>
                 </div>
                 <Cardmusic />
-        </div>
+            </div>
+
         <Footer />
     </div>
   )
 }
 
-export default Trending
+export default Latest

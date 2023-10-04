@@ -60,8 +60,8 @@ const Firstpage = () => {
                     <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('trending')}>
                         <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'> Trending </p>
                     </div>
-                    <div className=' px-2 cursor-pointer rounded-xl' onClick={()=> setTab('newest')}>
-                        <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'>Newest</p>
+                    <div className=' px-2 cursor-pointer rounded-xl' onClick={()=> setTab('latest')}>
+                        <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'>Latest</p>
                     </div>
                     <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('topchart')}>
                         <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'>Top chart</p>
