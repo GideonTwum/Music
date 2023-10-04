@@ -7,6 +7,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import {toast, Toaster} from 'react-hot-toast';
+import { Popconfirm } from 'antd';
 
 
 const Cardmusic = () => {
@@ -39,23 +40,19 @@ const Cardmusic = () => {
 
     const delMusic = (musicId) => {
         try{
-            const res = confirm(`Are you sure you want to delete this song?`);
-            if (res) {
-                var requestOptions = {
-                    method: 'DELETE',
-                    redirect: 'follow'
-                  };
-                  
-                  fetch(`https://music-api-qkmn.onrender.com:/api/v1/music/delete/${musicId}`, requestOptions)
-                    .then(response => response.json())
-                    .then(result => {
-                        toast.success(result.msg)
-                        getSongs()
-                        console.log(result)
-                    })
-                    .catch(error => console.log('error', error));
-    
-            }
+            var requestOptions = {
+                method: 'DELETE',
+                redirect: 'follow'
+              };
+              
+              fetch(`https://music-api-qkmn.onrender.com:/api/v1/music/delete/${musicId}`, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    toast.success(result.msg)
+                    getSongs()
+                    console.log(result)
+                })
+                .catch(error => console.log('error', error));
                   }
         catch(error){
             console.log(error)
@@ -141,9 +138,9 @@ const Cardmusic = () => {
                                                                             <FavoriteIcon className='text-red-400 favoriteicon' />
                                                                         </div>
                                                                 }
-                                                                    <div onClick={() => delMusic(song._id)}>
-                                                                            <DeleteOutlineOutlinedIcon className='text-[20px]' />
-                                                                    </div>
+                                                                   <Popconfirm title='Are you sure you want to delete this song?' okButtonProps={{style:{backgroundColor:'tomato'}}} okText='Delete' onConfirm={() => delMusic(song._id)}>
+                                                                      <DeleteOutlineOutlinedIcon className='text-[20px]' />
+                                                                   </Popconfirm>
                                                             </div>
                                                             </div>
                                                             

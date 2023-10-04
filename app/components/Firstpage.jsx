@@ -42,11 +42,9 @@ const Firstpage = () => {
             streams : 500 , 
         }
     ]
-    let tab = '';
+    
     const setTab = (item) => {
-        // return tab = item
-        tab = item 
-        alert(tab)
+        window.location.href = `/${item}`
     }
 
   return (
@@ -65,7 +63,7 @@ const Firstpage = () => {
                     <div className=' px-2 cursor-pointer rounded-xl' onClick={()=> setTab('newest')}>
                         <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'>Newest</p>
                     </div>
-                    <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('top chart')}>
+                    <div className='px-2 cursor-pointer rounded-xl' onClick={()=> setTab('topchart')}>
                         <p className='text-[13px] text-[#3A3A3A] hover:text-[mediumseagreen]'>Top chart</p>
                     </div>
                     <div className=' px-2 cursor-pointer rounded-xl' onClick={()=> setTab('older')}>
